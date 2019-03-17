@@ -19,6 +19,9 @@ def preprocessData(data):
     print "zmax", zmax
     print "zmin", zmin
     feature = (feature - zmin) / (zmax - zmin)
+    # 这个地方在归一化的时候，加入最大和最小一致的话，可能会导致nan的问题
+    feature = np.nan_to_num(feature)
+
     label=np.array(label)
     return feature,label
 
@@ -26,7 +29,13 @@ def preprocessData(data):
 
 
 def sigmoid(inx):
-    return 1.0 / (1 + exp(-inx))
+    #ToDo，这个地方需要再仔细debug一下math异常错误
+    res = 0
+    try:
+        res = 1.0 / (1 + exp(-inx))
+    except Exception as e:
+        print "sigmoid计算错误",inx,e
+    return res
 
 
 def SGD_FM(dataMatrix, classLabels, k, iter_num):

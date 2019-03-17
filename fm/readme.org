@@ -1,3 +1,10 @@
 *  fm
 当特征通过onehot形式构建的时候，维度超过1k，即使选取量比较少的数据集，量也挺大的。
 
+* 参考文档
+
+[[https://zhuanlan.zhihu.com/p/58160982][推荐系统召回四模型之：全能的FM模型]]
+
+[[https://www.cnblogs.com/pinard/p/6370127.html][FM推荐算法原理]]
+
+[[https://www.cnblogs.com/wkang/p/9588360.html][FM算法原理及python实现]]
