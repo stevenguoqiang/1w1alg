@@ -24,7 +24,7 @@ def maybe_download(filename, expected_bytes):
 
 filename = maybe_download('text8.zip', 31344016)
 print("filename", filename)
-# 解压下载的压缩文件，并使用tensorflow内置函数tf.compat.as_str将数据转化成单次的列表
+# 解压下载的压缩文件，并使用tensorflow内置函数tf.compat.as_str将数据转化成单词的列表
 def read_data(filename):
     with zipfile.ZipFile(filename) as f:
         data = tf.compat.as_str(f.read(f.namelist()[0])).split()
@@ -33,7 +33,7 @@ def read_data(filename):
 words = read_data(filename)
 print('Data size', len(words))
 
-# 创建vocabulary词汇表，使用collections.Counter统计单次列表中单单词的频数
+# 创建vocabulary词汇表，使用collections.Counter统计单词列表中单单词的频数
 vocabulary_size = 50000
 
 def build_dataset(words):
@@ -53,7 +53,7 @@ def build_dataset(words):
 
         data.append(index)
     count[0][1] = unk_count
-    # 单次的倒排索引
+    # 单词的倒排索引
     reverse_dictionary = dict(zip(dictionary.values(), dictionary.keys()))
     return data, count,dictionary,reverse_dictionary
 data, count, dictionary, reverse_dictionary = build_dataset(words)
@@ -69,7 +69,7 @@ def generate_batch(batch_size, num_skips, skip_window):
     """
     batch_size: batch的大小
     skip window: 为单词最远可以联系的距离
-    num_skips: 为每个单次生成多少个样本，它不能大于skip_window值的两倍
+    num_skips: 为每个单词生成多少个样本，它不能大于skip_window值的两倍
                并且batch_size必须是它的整数倍
     """
     global data_index
@@ -79,7 +79,7 @@ def generate_batch(batch_size, num_skips, skip_window):
     labels = np.ndarray(shape=(batch_size, 1), dtype=np.int32)
     span = 2*skip_window + 1
     buffer = collections.deque(maxlen=span)
-    # 从序号data_index开始，把span个单次循序读入buffer作为初始值
+    # 从序号data_index开始，把span个单词循序读入buffer作为初始值
     for _ in range(span):
         buffer.append(data[data_index])
         data_index = (data_index + 1) % len(data)
