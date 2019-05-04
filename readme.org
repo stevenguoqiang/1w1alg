@@ -1,9 +1,14 @@
 *  简介
 一周一算法：
 记录和促进自己在算法实践上的坚持。
+
 * todo
 
 | 任务                                                |   开始时间 |   截止时间 | 状态 |
 |-----------------------------------------------------+------------+------------+------|
-| Deep Learning Based Chatbot Models论文研读+代码demo | 2019-04-30 | 2019-05-19 | ing  |
-|                                                     |            |            |      |
+| Deep Learning Based Chatbot Models论文研读+代码demo | 2019-04-30 |            | ing  |
+| abstract translate +seq2seq                         |            | 2019-05-05 |      |
+| bi-seq2seq                                          |            | 2019-05-12 |      |
+| attention+seq2seq                                   |            | 2019-05-19 |      |
+| diffrent approaches to chatbot modeling and plan    |            | 2019-05-26 |      |
+
