@@ -4,3 +4,4 @@ fm/data_transform.py
 *.zip
 yieldmulti.py
 .ipynb_checkpoints
+.python-version
