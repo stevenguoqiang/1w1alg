@@ -6,9 +6,17 @@
 
 | 任务                                                |   开始时间 |   截止时间 | 状态 |
 |-----------------------------------------------------+------------+------------+------|
-| Deep Learning Based Chatbot Models论文研读+代码demo | 2019-04-30 |            | ing  |
-| abstract translate +seq2seq(basic model)                         |            | 2019-05-05 |      |
-| seq2seq(attention model)                                          |            | 2019-05-12 |      |
-| seq2seq(self attention)                                   |            | 2019-05-19 |      |
+| Deep Learning Based Chatbot Models论文研读+代码demo | 2019-04-30 |            | 复习 |
+| abstract translate +seq2seq(basic model)            |            | 2019-05-05 |      |
+| seq2seq(attention model)                            |            | 2019-05-12 |      |
+| seq2seq(self attention)                             |            | 2019-05-19 |      |
 | diffrent approaches to chatbot modeling and plan    |            | 2019-05-26 |      |
+|                                                     |            | 2019-05-26 |      |
+| 机器学习算法(python&C++）                           | 2019-06-10 |            | ing  |
+| KNN                                                 |            |            |      |
+| decision tree                                       |            |            |      |
+| LR                                                  |            |            |      |
+| SVM                                                 |            |            |      |
+| adaBoost                                            |            |            |      |
+|                                                     |            |            |      |
 
